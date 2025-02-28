@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Factorial Calculator & Color Changer</title>
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+            .container {
+                border: 2px solid black;
+                display: inline-block;
+                padding: 20px;
+                margin-top: 50px;
+            }
+            .color-btn {
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                margin: 5px;
+                cursor: pointer;
+            }
+            .red { background-color: red; }
+            .blue { background-color: blue; }
+            .green { background-color: green; }
+        </style>
+    </head>
+    <body>
+    
+        <div class="container">
+            <label for="a"><b>Enter the number:</b></label>
+            <input type="number" id="a">
+            <br><br>
+            <button onclick="calculateFactorial()">Find Factorial</button>
+            <br><br>
+            <b>Result :</b> <span id="result">________</span>
+            <br><br>
+    
+            <!-- Color Change Buttons -->
+            <div class="color-btn red" onclick="changeBackground('red')"></div>
+            <div class="color-btn blue" onclick="changeBackground('blue')"></div>
+            <div class="color-btn green" onclick="changeBackground('green')"></div>
+        </div>
+
+        <script>
+            function calculateFactorial() {
+                let num = document.getElementById("a").value;
+                let fact = 1;
+    
+                if (num < 0) {
+                    document.getElementById("result").innerText = "Undefined";  
+                    return;
+                }
+    
+               // for (let i = 1; i <= num; i++) {
+                 //   fact *= i;
+               // }
+    
+                document.getElementById("result").innerText = fact;
+            }
+    
+            function changeBackground(color) {
+                document.body.style.backgroundColor = color;
+            }
+        </script>
+</html>
